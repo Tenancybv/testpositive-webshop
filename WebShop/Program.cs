@@ -17,8 +17,7 @@
     String typeOfShippingCosts = args[1];
     Double totalPrice = Convert.ToDouble(args[2]);
 
-    CostsCalculator calculator = new CostsCalculator();
-    Double costs = calculator.ShippingCosts(true, typeOfShippingCosts, totalPrice);
+    Double costs = CostsCalculator.ShippingCosts(true, typeOfShippingCosts, totalPrice);
 
     Console.WriteLine($"Costs: {costs}");
   }

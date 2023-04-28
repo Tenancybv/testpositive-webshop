@@ -1,5 +1,5 @@
-public class CostsCalculator {
-  public double ShippingCosts(bool calculateShippingCosts, string typeOfShippingCosts, double totalPrice) {
+public static class CostsCalculator {
+  public static double ShippingCosts(bool calculateShippingCosts, string typeOfShippingCosts, double totalPrice) {
     double result = 0;
     if (calculateShippingCosts == true) {
       if (totalPrice > 1500) {

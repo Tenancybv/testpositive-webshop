@@ -5,6 +5,14 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop", "WebShop\WebShop.csproj", "{9F9BAF6F-28B9-4E57-8393-C9F08479488A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApiTests", "WebShopApiTests\WebShopApiTests.csproj", "{3A88F700-6577-4992-93A7-2E79365B4216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopGuiTests", "WebShopGuiTests\WebShopGuiTests.csproj", "{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopPerformanceTests", "WebShopPerformanceTests\WebShopPerformanceTests.csproj", "{D0A55BA5-934D-47EC-A436-326B69B66869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopUnitTests", "WebShopUnitTests\WebShopUnitTests.csproj", "{1FE6CCBB-876E-4BBB-8802-217A1F85E930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,21 @@ Global
 		{9F9BAF6F-28B9-4E57-8393-C9F08479488A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F9BAF6F-28B9-4E57-8393-C9F08479488A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F9BAF6F-28B9-4E57-8393-C9F08479488A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A88F700-6577-4992-93A7-2E79365B4216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A88F700-6577-4992-93A7-2E79365B4216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A88F700-6577-4992-93A7-2E79365B4216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A88F700-6577-4992-93A7-2E79365B4216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A55BA5-934D-47EC-A436-326B69B66869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A55BA5-934D-47EC-A436-326B69B66869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A55BA5-934D-47EC-A436-326B69B66869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A55BA5-934D-47EC-A436-326B69B66869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FE6CCBB-876E-4BBB-8802-217A1F85E930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE6CCBB-876E-4BBB-8802-217A1F85E930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE6CCBB-876E-4BBB-8802-217A1F85E930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE6CCBB-876E-4BBB-8802-217A1F85E930}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
