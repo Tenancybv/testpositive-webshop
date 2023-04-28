@@ -29,7 +29,7 @@ public static class PerformanceTester {
 
       // Calculate stats
       TimeSpan responseTime = DateTime.Now - startRequest;
-      averageResponseTime = (averageResponseTime * amount + responseTime.Milliseconds) / (++amount);
+      averageResponseTime = (averageResponseTime * amount + (int)responseTime.TotalMilliseconds) / (++amount);
       amountSuccessFull += isSuccessFull ? 1 : 0;
 
       // Wait for timeout

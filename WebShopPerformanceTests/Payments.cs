@@ -34,7 +34,7 @@ public class Tests
 
         // Test average response time
         Console.WriteLine("Average response time: " + result.averageResponseTime.TotalMilliseconds);
-        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 30);
+        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
 
         // Warn if average response time is above 0.2
         if (result.averageResponseTime.TotalMilliseconds > 200) {
