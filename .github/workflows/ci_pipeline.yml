@@ -36,6 +36,10 @@ jobs:
   performance-tests:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: WebShopPerformanceTests
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
