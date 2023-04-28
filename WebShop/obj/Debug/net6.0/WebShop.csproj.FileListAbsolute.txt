@@ -1,0 +1,15 @@
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.csproj.AssemblyReference.cache
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.GeneratedMSBuildEditorConfig.editorconfig
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.AssemblyInfoInputs.cache
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.AssemblyInfo.cs
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.csproj.CoreCompileInputs.cache
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/bin/Debug/net6.0/WebShop
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/bin/Debug/net6.0/WebShop.deps.json
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/bin/Debug/net6.0/WebShop.runtimeconfig.json
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/bin/Debug/net6.0/WebShop.dll
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/bin/Debug/net6.0/WebShop.pdb
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.dll
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/refint/WebShop.dll
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.pdb
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/WebShop.genruntimeconfig.cache
+/home/jimmy/Documents/School/testpositive-webshop/WebShop/obj/Debug/net6.0/ref/WebShop.dll
