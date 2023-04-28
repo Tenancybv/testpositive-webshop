@@ -88,24 +88,3 @@ jobs:
       
       - name: Run tests
         run: dotnet test
-          
-    # - name: Restore dependencies
-    #   run: dotnet restore
-
-    # - name: Build the solution
-    #   run: dotnet build --configuration Release --no-restore
-
-    # Add steps to run tests using the testing tools or suites of your choice.
-    # For example, if you decide to use NUnit for unit testing:
-    #
-    # - name: Run unit tests
-    #   run: dotnet test --logger "trx;LogFileName=TestResults.trx" --configuration Release --no-build
-
-    # - name: Run GUI tests
-    #   run: # Add command to run GUI tests
-
-    # - name: Run performance tests
-    #   run: # Add command to run performance tests
-
-    # - name: Run API tests
-    #   run: # Add command to run API tests
