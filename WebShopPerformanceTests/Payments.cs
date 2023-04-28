@@ -3,16 +3,19 @@ using ServiceReference;
 
 public class Tests
 {
-    String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "jbtwaalf@gmail.com";
-    String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "Start1234%";
+    String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "";
+    String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
 
     [Test]
     public async Task TestGetPaymentMethodCollectionAsync()
     {
+        NopServiceClient service = new NopServiceClient();
+        
+        // Settings
         int maxTime = 120;
         int timeout = 20000;
-        NopServiceClient service = new NopServiceClient();
 
+        // Test service with performancetester
         PerformanceTester.PerformanceResult result = await PerformanceTester.testLinear(maxTime, timeout, async Task<bool> () => {
             bool isSuccessFull = true;
 
@@ -21,8 +24,6 @@ public class Tests
             } catch (Exception e) {
                 isSuccessFull = false;
             }
-
-            Task.Delay(200);
 
             return isSuccessFull;
         });
@@ -33,7 +34,7 @@ public class Tests
 
         // Test average response time
         Console.WriteLine("Average response time: " + result.averageResponseTime.TotalMilliseconds);
-        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
+        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 30);
 
         // Warn if average response time is above 0.2
         if (result.averageResponseTime.TotalMilliseconds > 200) {
