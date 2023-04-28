@@ -22,6 +22,8 @@ public class Tests
                 isSuccessFull = false;
             }
 
+            Task.Delay(200);
+
             return isSuccessFull;
         });
 
