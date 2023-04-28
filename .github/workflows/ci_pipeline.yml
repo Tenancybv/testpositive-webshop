@@ -12,6 +12,10 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: WebShopUnitTests
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -20,10 +24,17 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
+      
+      - name: Run tests
+        run: dotnet test
 
   api-tests:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: WebShopApiTests
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -32,6 +43,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
+      
+      - name: Run tests
+        run: dotnet test
   
   performance-tests:
     runs-on: ubuntu-latest
@@ -48,15 +62,16 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
-      
-      - name: Restore dependencies
-        run: dotnet restore
 
       - name: Run tests
         run: dotnet test
 
   gui-tests:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: WebShopGuiTests
 
     steps:
       - name: Checkout repository
@@ -66,6 +81,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
+      
+      - name: Run tests
+        run: dotnet test
           
     # - name: Restore dependencies
     #   run: dotnet restore
