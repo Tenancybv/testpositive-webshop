@@ -7,7 +7,7 @@ public class Tests
     String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
 
     [Test]
-    public async Task TestGetPaymentMethodCollectionAsync()
+    public async Task TestGetPaymentMethodLinear()
     {
         NopServiceClient service = new NopServiceClient();
         
@@ -22,6 +22,43 @@ public class Tests
             try {
                 await service.GetPaymentMethodCollectionAsync(username, password);
             } catch (Exception e) {
+                isSuccessFull = false;
+            }
+
+            return isSuccessFull;
+        });
+
+        // Test all successfull
+        Console.WriteLine("Amount successfull: " + result.amountSuccessFull);
+        Assert.IsTrue(result.amountFailed == 0);
+
+        // Test average response time
+        Console.WriteLine("Average response time: " + result.averageResponseTime.TotalMilliseconds);
+        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
+
+        // Warn if average response time is above 0.2
+        if (result.averageResponseTime.TotalMilliseconds > 200) {
+            Console.WriteLine("WARN: Average response time is above 0.2 seconds");
+        }
+    }
+
+    [Test]
+    public async Task TestGetPaymentMethodCascading()
+    {
+        NopServiceClient service = new NopServiceClient();
+        
+        // Settings
+        int maxTime = 120;
+        int timeout = 20000;
+
+        // Test service with performancetester
+        PerformanceTester.PerformanceResult result = await PerformanceTester.testCascading(maxTime, timeout, 5, async Task<bool> () => {
+            bool isSuccessFull = true;
+
+            try {
+                await service.GetPaymentMethodCollectionAsync(username, password);
+            } catch (Exception e) {
+                Console.WriteLine(e);
                 isSuccessFull = false;
             }
 

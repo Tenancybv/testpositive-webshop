@@ -1,28 +1,37 @@
 namespace WebShopPerformanceTests;
 
-public static class PerformanceTester {
+public static class PerformanceTester
+{
 
-  public partial class PerformanceResult {
+  public partial class PerformanceResult
+  {
     public TimeSpan averageResponseTime = TimeSpan.Zero;
     public int amountFailed = 0;
 
     public int amountSuccessFull = 0;
   }
 
+  public partial class ConcurrentResult {
+    public bool isSuccessFull = false;
+    public int responseTime = 0;
+  }
+
   /*
     Tests a service by sending requests with a timeout over a duration.
     Returns a PerformanceResult with the average response time, amount of failed requests and amount of successfull requests.
   */
-  public static async Task<PerformanceResult> testLinear(int durationInSeconds, int timeoutInMilliSeconds, Func<Task<bool>> test) {
+  public static async Task<PerformanceResult> testLinear(int durationInSeconds, int timeoutInMilliSeconds, Func<Task<bool>> test)
+  {
     DateTime startDate = DateTime.Now;
 
     // Initialize stats
     int amount = 0;
     int amountSuccessFull = 0;
     int averageResponseTime = 0;
-    
+
     // Loop until duration is reached
-    while((DateTime.Now - startDate).TotalSeconds < durationInSeconds){
+    while ((DateTime.Now - startDate).TotalSeconds < durationInSeconds)
+    {
       // Run function
       DateTime startRequest = DateTime.Now;
       bool isSuccessFull = await test();
@@ -37,10 +46,79 @@ public static class PerformanceTester {
     }
 
     // Return stats
-    return new PerformanceResult {
+    return new PerformanceResult
+    {
       averageResponseTime = TimeSpan.FromMilliseconds(averageResponseTime),
       amountFailed = amount - amountSuccessFull,
-      amountSuccessFull =  amountSuccessFull
+      amountSuccessFull = amountSuccessFull
     };
   }
+  /*
+    Tests a service by sending requests with a timeout over a duration with concurrency.
+    Returns a PerformanceResult with the average response time, amount of failed requests and amount of successfull requests.
+  */
+  public static async Task<PerformanceResult> testCascading(int durationInSeconds, int timeoutInMilliSeconds, int maxConcurrent, Func<Task<bool>> test)
+  {
+    DateTime startDate = DateTime.Now;
+
+    // Initialize stats
+    int amount = 0;
+    int step = 0;
+    int amountSuccessFull = 0;
+    int averageResponseTime = 0;
+
+    // Calculate concurrency by amount 1 = 1 and maxconcurrency is 
+    int amountSteps = durationInSeconds / (timeoutInMilliSeconds / 1000);
+
+    // Loop until duration is reached
+    while ((DateTime.Now - startDate).TotalSeconds < durationInSeconds)
+    {
+      // Run function with concurrency
+      int concurrency = calculateConcurrency(step++, maxConcurrent, amountSteps);
+      Console.WriteLine("Concurrency: " + concurrency);
+      List<Task<ConcurrentResult>> tasks = new List<Task<ConcurrentResult>>();
+
+      for (int i = 0; i < concurrency; i++)
+      {
+        tasks.Add(runConcurrent(test));
+      }
+
+      ConcurrentResult[] results = await Task.WhenAll(tasks);
+
+      // Calculate stats
+      foreach (ConcurrentResult result in results)
+      {
+        averageResponseTime = (averageResponseTime * amount + result.responseTime) / (++amount);
+        amountSuccessFull += result.isSuccessFull ? 1 : 0;
+      }
+
+      // Wait for timeout
+      await Task.Delay(timeoutInMilliSeconds);
+    }
+
+    // Return stats
+    return new PerformanceResult
+    {
+      averageResponseTime = TimeSpan.FromMilliseconds(averageResponseTime),
+      amountFailed = amount - amountSuccessFull,
+      amountSuccessFull = amountSuccessFull
+    };
+  }
+
+  private static async Task<ConcurrentResult> runConcurrent(Func<Task<bool>> test)
+  {
+    DateTime startRequest = DateTime.Now;
+    bool isSuccessFull = await test();
+
+    return new ConcurrentResult
+    {
+      isSuccessFull = isSuccessFull,
+      responseTime = (int)(DateTime.Now - startRequest).TotalMilliseconds
+    };
+  }
+  private static int calculateConcurrency(int step, int maxConcurrent, int amountSteps)
+  {
+    return (int)Math.Round(((maxConcurrent - 1) / (double)(amountSteps - 1)) * step) + 1;
+  }
+
 }
