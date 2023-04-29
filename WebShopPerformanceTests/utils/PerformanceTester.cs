@@ -68,7 +68,7 @@ public static class PerformanceTester
     int averageResponseTime = 0;
 
     // Calculate concurrency by amount 1 = 1 and maxconcurrency is 
-    int amountSteps = durationInSeconds / (timeoutInSeconds / 1000);
+    int amountSteps = durationInSeconds / timeoutInSeconds;
 
     // Loop until duration is reached
     while ((DateTime.Now - startDate).TotalSeconds < durationInSeconds)
