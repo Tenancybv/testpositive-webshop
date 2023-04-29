@@ -67,7 +67,7 @@ public static class PerformanceTester
     int amountSuccessFull = 0;
     int averageResponseTime = 0;
 
-    // Calculate concurrency by amount 1 = 1 and maxconcurrency is 
+    // Calculate amount of steps
     int amountSteps = durationInSeconds / timeoutInSeconds;
 
     // Loop until duration is reached
