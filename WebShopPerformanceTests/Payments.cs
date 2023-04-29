@@ -30,7 +30,7 @@ public class Tests
   }
 
   [Test]
-  public async Task TestGetPaymentMethodsLinear()
+  public async Task Test_a_GetPaymentMethodsLinear()
   {
     // Test service with performancetester and linear
     PerformanceResult result = await PerformanceTester.testLinear(maxTime, timeout, async Task<bool> () =>
@@ -54,7 +54,7 @@ public class Tests
   }
 
   [Test]
-  public async Task TestGetPaymentMethodsCascading()
+  public async Task Test_b_GetPaymentMethodsCascading()
   {
     // Test service with performancetester and cascading
     PerformanceTester.PerformanceResult result = await PerformanceTester.testCascading(maxTime, timeout, maxConcurrent, async Task<bool> () =>
