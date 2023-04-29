@@ -12,6 +12,10 @@ public class Tests
   static int timeout = 20;
   static int maxConcurrent = 5;
 
+  static int maxAverageResponseTime = 300;
+
+  static int warnAverageResponseTime = 200;
+
   public async Task<bool> TestGetPaymentMethods()
   {
     NopServiceClient service = new NopServiceClient();
@@ -40,14 +44,15 @@ public class Tests
 
     // Test all successfull
     Console.WriteLine("[linear] Amount successfull: " + result.amountSuccessFull);
-    Assert.IsTrue(result.amountFailed == 0);
+    Assert.Zero(result.amountFailed);
+
 
     // Test average response time
     Console.WriteLine("[linear] Average response time: " + result.averageResponseTime.TotalMilliseconds);
-    Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
+    Assert.Less(result.averageResponseTime.TotalMilliseconds, maxAverageResponseTime);
 
     // Warn if average response time is above 0.2
-    if (result.averageResponseTime.TotalMilliseconds > 200)
+    if (result.averageResponseTime.TotalMilliseconds > warnAverageResponseTime)
     {
       Console.WriteLine("[linear] WARN: Average response time is above 0.2 seconds");
     }
@@ -64,14 +69,14 @@ public class Tests
 
     // Test all successfull
     Console.WriteLine("[cascading] Amount successfull: " + result.amountSuccessFull);
-    Assert.IsTrue(result.amountFailed == 0);
+    Assert.Zero(result.amountFailed);
 
     // Test average response time
     Console.WriteLine("[cascading] Average response time: " + result.averageResponseTime.TotalMilliseconds);
-    Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
+    Assert.Less(result.averageResponseTime.TotalMilliseconds, maxAverageResponseTime);
 
     // Warn if average response time is above 0.2
-    if (result.averageResponseTime.TotalMilliseconds > 200)
+    if (result.averageResponseTime.TotalMilliseconds > warnAverageResponseTime)
     {
       Console.WriteLine("[cascading] WARN: Average response time is above 0.2 seconds");
     }
