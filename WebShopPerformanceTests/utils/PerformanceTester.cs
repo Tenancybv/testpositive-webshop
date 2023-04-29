@@ -20,7 +20,7 @@ public static class PerformanceTester
     Tests a service by sending requests with a timeout over a duration.
     Returns a PerformanceResult with the average response time, amount of failed requests and amount of successfull requests.
   */
-  public static async Task<PerformanceResult> testLinear(int durationInSeconds, int timeoutInMilliSeconds, Func<Task<bool>> test)
+  public static async Task<PerformanceResult> testLinear(int durationInSeconds, int timeoutInSeconds, Func<Task<bool>> test)
   {
     DateTime startDate = DateTime.Now;
 
@@ -42,7 +42,7 @@ public static class PerformanceTester
       amountSuccessFull += isSuccessFull ? 1 : 0;
 
       // Wait for timeout
-      await Task.Delay(timeoutInMilliSeconds);
+      await Task.Delay(timeoutInSeconds * 1000);
     }
 
     // Return stats
@@ -54,10 +54,10 @@ public static class PerformanceTester
     };
   }
   /*
-    Tests a service by sending requests with a timeout over a duration with concurrency.
+    Tests a service by sending requests with a timeout over a duration with concurrency increasing every step.
     Returns a PerformanceResult with the average response time, amount of failed requests and amount of successfull requests.
   */
-  public static async Task<PerformanceResult> testCascading(int durationInSeconds, int timeoutInMilliSeconds, int maxConcurrent, Func<Task<bool>> test)
+  public static async Task<PerformanceResult> testCascading(int durationInSeconds, int timeoutInSeconds, int maxConcurrent, Func<Task<bool>> test)
   {
     DateTime startDate = DateTime.Now;
 
@@ -68,7 +68,7 @@ public static class PerformanceTester
     int averageResponseTime = 0;
 
     // Calculate concurrency by amount 1 = 1 and maxconcurrency is 
-    int amountSteps = durationInSeconds / (timeoutInMilliSeconds / 1000);
+    int amountSteps = durationInSeconds / (timeoutInSeconds / 1000);
 
     // Loop until duration is reached
     while ((DateTime.Now - startDate).TotalSeconds < durationInSeconds)
@@ -93,7 +93,7 @@ public static class PerformanceTester
       }
 
       // Wait for timeout
-      await Task.Delay(timeoutInMilliSeconds);
+      await Task.Delay(timeoutInSeconds * 1000);
     }
 
     // Return stats
@@ -105,6 +105,9 @@ public static class PerformanceTester
     };
   }
 
+  /*
+    Runs a function and returns a ConcurrentResult with the response time and if the request was successfull.
+  */
   private static async Task<ConcurrentResult> runConcurrent(Func<Task<bool>> test)
   {
     DateTime startRequest = DateTime.Now;
@@ -116,6 +119,11 @@ public static class PerformanceTester
       responseTime = (int)(DateTime.Now - startRequest).TotalMilliseconds
     };
   }
+
+  /*
+    Calculates the concurrency based on the step, maxconcurrency and amount of steps.
+    First step is always 1 and last step is always maxconcurrency. (Latency is not taken into account)
+  */
   private static int calculateConcurrency(int step, int maxConcurrent, int amountSteps)
   {
     return (int)Math.Round(((maxConcurrent - 1) / (double)(amountSteps - 1)) * step) + 1;

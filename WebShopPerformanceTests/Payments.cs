@@ -1,81 +1,79 @@
 namespace WebShopPerformanceTests;
 using ServiceReference;
+using static WebShopPerformanceTests.PerformanceTester;
 
 public class Tests
 {
-    String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "";
-    String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
+  // Settings
+  String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "";
+  String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
 
-    [Test]
-    public async Task TestGetPaymentMethodLinear()
+  static int maxTime = 120;
+  static int timeout = 20;
+  static int maxConcurrent = 5;
+
+  public async Task<bool> TestGetPaymentMethods()
+  {
+    NopServiceClient service = new NopServiceClient();
+    bool isSuccessFull = true;
+
+    try
     {
-        NopServiceClient service = new NopServiceClient();
-        
-        // Settings
-        int maxTime = 120;
-        int timeout = 20000;
-
-        // Test service with performancetester
-        PerformanceTester.PerformanceResult result = await PerformanceTester.testLinear(maxTime, timeout, async Task<bool> () => {
-            bool isSuccessFull = true;
-
-            try {
-                await service.GetPaymentMethodCollectionAsync(username, password);
-            } catch (Exception e) {
-                isSuccessFull = false;
-            }
-
-            return isSuccessFull;
-        });
-
-        // Test all successfull
-        Console.WriteLine("Amount successfull: " + result.amountSuccessFull);
-        Assert.IsTrue(result.amountFailed == 0);
-
-        // Test average response time
-        Console.WriteLine("Average response time: " + result.averageResponseTime.TotalMilliseconds);
-        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
-
-        // Warn if average response time is above 0.2
-        if (result.averageResponseTime.TotalMilliseconds > 200) {
-            Console.WriteLine("WARN: Average response time is above 0.2 seconds");
-        }
+      await service.GetPaymentMethodCollectionAsync(username, password);
+    }
+    catch (Exception e)
+    {
+      isSuccessFull = false;
     }
 
-    [Test]
-    public async Task TestGetPaymentMethodCascading()
+    return isSuccessFull;
+  }
+
+  [Test]
+  public async Task TestGetPaymentMethodsLinear()
+  {
+    // Test service with performancetester and linear
+    PerformanceResult result = await PerformanceTester.testLinear(maxTime, timeout, async Task<bool> () =>
     {
-        NopServiceClient service = new NopServiceClient();
-        
-        // Settings
-        int maxTime = 120;
-        int timeout = 20000;
+      return await TestGetPaymentMethods();
+    });
 
-        // Test service with performancetester
-        PerformanceTester.PerformanceResult result = await PerformanceTester.testCascading(maxTime, timeout, 5, async Task<bool> () => {
-            bool isSuccessFull = true;
+    // Test all successfull
+    Console.WriteLine("[linear] Amount successfull: " + result.amountSuccessFull);
+    Assert.IsTrue(result.amountFailed == 0);
 
-            try {
-                await service.GetPaymentMethodCollectionAsync(username, password);
-            } catch (Exception e) {
-                Console.WriteLine(e);
-                isSuccessFull = false;
-            }
+    // Test average response time
+    Console.WriteLine("[linear] Average response time: " + result.averageResponseTime.TotalMilliseconds);
+    Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
 
-            return isSuccessFull;
-        });
-
-        // Test all successfull
-        Console.WriteLine("Amount successfull: " + result.amountSuccessFull);
-        Assert.IsTrue(result.amountFailed == 0);
-
-        // Test average response time
-        Console.WriteLine("Average response time: " + result.averageResponseTime.TotalMilliseconds);
-        Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
-
-        // Warn if average response time is above 0.2
-        if (result.averageResponseTime.TotalMilliseconds > 200) {
-            Console.WriteLine("WARN: Average response time is above 0.2 seconds");
-        }
+    // Warn if average response time is above 0.2
+    if (result.averageResponseTime.TotalMilliseconds > 200)
+    {
+      Console.WriteLine("[linear] WARN: Average response time is above 0.2 seconds");
     }
+  }
+
+  [Test]
+  public async Task TestGetPaymentMethodsCascading()
+  {
+    // Test service with performancetester and cascading
+    PerformanceTester.PerformanceResult result = await PerformanceTester.testCascading(maxTime, timeout, maxConcurrent, async Task<bool> () =>
+    {
+      return await TestGetPaymentMethods();
+    });
+
+    // Test all successfull
+    Console.WriteLine("[cascading] Amount successfull: " + result.amountSuccessFull);
+    Assert.IsTrue(result.amountFailed == 0);
+
+    // Test average response time
+    Console.WriteLine("[cascading] Average response time: " + result.averageResponseTime.TotalMilliseconds);
+    Assert.IsTrue(result.averageResponseTime.TotalMilliseconds < 300);
+
+    // Warn if average response time is above 0.2
+    if (result.averageResponseTime.TotalMilliseconds > 200)
+    {
+      Console.WriteLine("[cascading] WARN: Average response time is above 0.2 seconds");
+    }
+  }
 }
