@@ -5,8 +5,8 @@ using static WebShopPerformanceTests.PerformanceTester;
 public class Tests
 {
   // Settings
-  String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "";
-  String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
+  String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "jbtwaalf@gmail.com";
+  String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "Start1234%";
 
   static int maxTime = 120;
   static int timeout = 20;
