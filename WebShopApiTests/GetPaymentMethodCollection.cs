@@ -6,8 +6,8 @@ using ServiceReference;
 public class GetPaymentMethodCollection
 {
   private readonly NopServiceClient _client;
-  String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "jbtwaalf@gmail.com";
-  String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "Start1234%";
+  String username = Environment.GetEnvironmentVariable("API_USERNAME") ?? "";
+  String password = Environment.GetEnvironmentVariable("API_PASSWORD") ?? "";
 
   private static readonly HashSet<string> ValidPaymentMethods = new HashSet<string>
     {
