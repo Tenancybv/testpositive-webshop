@@ -2,6 +2,7 @@ namespace WebShopApiTests;
 using NUnit.Framework;
 using System;
 using ServiceReference;
+using System.ServiceModel;
 
 public class GetPaymentMethodCollection
 {
@@ -41,6 +42,42 @@ public class GetPaymentMethodCollection
       Assert.IsTrue(ValidPaymentMethods.Contains(paymentMethod.Name), $"Unexpected payment method found: {paymentMethod.Name}");
     }
   }
+
+  [Test]
+  public async Task TestInvalidUsername()
+  {
+    // Arrange
+    string invalidUsername = "incorrect_username";
+
+    // Act & Assert
+    var exception = Assert.ThrowsAsync<FaultException<ExceptionDetail>>(async () => await _client.GetPaymentMethodCollectionAsync(invalidUsername, password));
+    StringAssert.Contains("Not allowed", exception?.Message);
+
+  }
+
+  [Test]
+  public async Task TestInvalidPassword()
+  {
+    // Arrange
+    string invalidPassword = "incorrect_password";
+
+    // Act & Assert
+    var exception = Assert.ThrowsAsync<FaultException<ExceptionDetail>>(async () => await _client.GetPaymentMethodCollectionAsync(username, invalidPassword));
+    StringAssert.Contains("Not allowed", exception?.Message);
+
+  }
+
+  [Test]
+  public async Task TestNullCredentials_SOAPError()
+  {
+    // Act & Assert
+    var exception = Assert.ThrowsAsync<FaultException<ExceptionDetail>>(async () => await _client.GetPaymentMethodCollectionAsync(null, null));
+    StringAssert.Contains("Not allowed", exception?.Message);
+  }
+
+  // Further assertions...?
+
+
 
 }
 
