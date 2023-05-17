@@ -3,6 +3,8 @@ using NUnit.Framework;
 using System;
 using ServiceReference;
 using System.ServiceModel;
+using System.Text;
+using System.Net;
 
 public class GetPaymentMethodCollection
 {
@@ -68,14 +70,31 @@ public class GetPaymentMethodCollection
   }
 
   [Test]
-  public async Task TestNullCredentials_SOAPError()
+  public async Task TestInvalidSoapRequest()
   {
-    // Act & Assert
-    var exception = Assert.ThrowsAsync<FaultException<ExceptionDetail>>(async () => await _client.GetPaymentMethodCollectionAsync(null, null));
-    StringAssert.Contains("Not allowed", exception?.Message);
-  }
+    string soapRequest = @"<soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:web=""http://tempuri.org/"">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetPaymentMethodCollection>
+         <web:usernameOrEmail>test@test.com</web:usernameOrEmil>
+         <web:userPassword>password</web:userPassword>
+      </web:GetPaymentMethodCollection>
+   </soapenv:Body>
+</soapenv:Envelope>";
 
-  // Further assertions...?
+    HttpClient client = new HttpClient();
+    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://demowebshop.tricentis.com/Plugins/Misc.WebServicesCustomer/Remote/NopService.svc");
+    request.Content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
+    request.Headers.Add("SOAPAction", "http://tempuri.org/INopService/GetPaymentMethodCollection");
+
+    // Act
+    HttpResponseMessage response = await client.SendAsync(request);
+    string responseContent = await response.Content.ReadAsStringAsync();
+
+    // Assert
+    StringAssert.Contains("an error deserializing the object", responseContent);
+    Assert.AreEqual(HttpStatusCode.InternalServerError, response.StatusCode);
+  }
 
 
 
