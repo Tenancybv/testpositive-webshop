@@ -94,7 +94,7 @@ icnt2 = rand2.nextInt(upperLimit2)
 
 switch (icnt2) {
     case 0:
-		WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop. Apparel  Shoes/a_Blue Jeans'),timeout )
+		WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop. Apparel  Shoes/img'),timeout )
 		
         WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Apparel  Shoes/a_Blue Jeans'))
 
