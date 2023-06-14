@@ -80,4 +80,4 @@ jobs:
       with:
           version: '7.5.5'
           projectPath: '${{ github.workspace }}/WebShopGuiTests'
-          args: '-noSplash -runMode=console -projectPath="C:\Users\steef\Katalon Studio\Webshopt\Webshopt.prj" -retry=0 -testSuitePath="Test Suites/Test Suite" -browserType="saucelabs_second" -executionProfile="default" -apiKey=${{ secrets.KATALON_API_KEY }} -testOpsProjectId=1151115 --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true' 
+          args: '-noSplash -runMode=console -retry=0 -testSuitePath="Test Suites/Test Suite" -browserType="saucelabs_second" -executionProfile="default" -apiKey=${{ secrets.KATALON_API_KEY }} -testOpsProjectId=1151115 --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true' 
