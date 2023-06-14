@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Apparel  Shoes</name>
+   <tag></tag>
+   <elementGuidId>48d27a9d-dc90-478d-a0a2-90f4febff119</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[contains(text(),'Apparel &amp; Shoes')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>a.hover</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>1c7e5cb2-ec3e-4c46-ab71-dbb11b3e5a8c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/apparel-shoes</value>
+      <webElementGuid>1bbac50d-b94c-4068-9336-ae33d253f492</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>hover</value>
+      <webElementGuid>6d5dff0c-ad6a-42a3-be3c-6157b3687aa2</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Apparel &amp; Shoes
+        </value>
+      <webElementGuid>ac30a2eb-6f72-40c6-b33a-a810dd374cb6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;header-menu&quot;]/ul[@class=&quot;top-menu&quot;]/li[4]/a[@class=&quot;hover&quot;]</value>
+      <webElementGuid>5ed5efd2-d4d9-4667-9804-a66284a6d6e7</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'Apparel &amp; Shoes')]</value>
+      <webElementGuid>b292c4c4-a0b0-4686-9ad4-a339b627eb7a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/apparel-shoes')]</value>
+      <webElementGuid>9b735344-c6e9-4ef2-a522-89369c7bf5fe</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

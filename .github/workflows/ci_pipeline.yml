@@ -71,20 +71,13 @@ jobs:
         run: dotnet test
 
   gui-tests:
-    runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: WebShopGuiTests
-
+    runs-on: windows-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-      
-      - name: Run tests
-        run: dotnet test
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Katalon Studio Github Action
+      uses: katalon-studio/katalon-studio-github-action@v2.1
+      with:
+          version: '7.5.5'
+          projectPath: 'WebShopGuiTests'
+          args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'

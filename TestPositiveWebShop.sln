@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop", "WebShop\WebShop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopApiTests", "WebShopApiTests\WebShopApiTests.csproj", "{3A88F700-6577-4992-93A7-2E79365B4216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopGuiTests", "WebShopGuiTests\WebShopGuiTests.csproj", "{607C8EC1-E8D5-4CE7-ABE4-FD4AE93AF4C5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopPerformanceTests", "WebShopPerformanceTests\WebShopPerformanceTests.csproj", "{D0A55BA5-934D-47EC-A436-326B69B66869}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShopUnitTests", "WebShopUnitTests\WebShopUnitTests.csproj", "{1FE6CCBB-876E-4BBB-8802-217A1F85E930}"
