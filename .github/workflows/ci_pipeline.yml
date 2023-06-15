@@ -38,7 +38,7 @@ jobs:
           path-to-opencover-xml: ./OpenCover/coverage.opencover.xml
           path-to-badges: ./
           minimum-coverage: 90
-          repo-token: ${{ secrets.GITHUB_TOKEN }
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   api-tests:
     runs-on: ubuntu-latest
