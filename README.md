@@ -1,7 +1,7 @@
 
 # SOAP Web Service Testing Project
 
-[![Branch Coverage Status](./WebShopUnitTests/coverage-badge-branch.svg)](https://github.com/Tenancybv/testpositive-webshop/)
+[![Branch Coverage Status](./coverage-badge-branch.svg)](https://github.com/Tenancybv/testpositive-webshop/WebShopUnitTests/OpenCover/coverage.opencover.xml)
 
 This project focuses on testing a SOAP web service using various testing methods:
 
