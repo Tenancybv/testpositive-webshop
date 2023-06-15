@@ -90,7 +90,7 @@ jobs:
         tar -xf engine.tar.gz
         # Run Katalon Studio Engine
         ls -lah
-        cd "Katalon_Studio_Engine*"
+        cd "Katalon_Studio_Engine_MacOS-8.6.5"
         cd "Katalon Studio Engine.app/Contents/MacOS"
         chmod +x katalonc
         
