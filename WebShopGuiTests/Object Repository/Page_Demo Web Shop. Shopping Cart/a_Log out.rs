@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>5728084f-4d65-483e-a906-906987a67e63</webElementGuid>
+      <webElementGuid>42fc8781-5cb4-4c25-847e-cef1fe0c41c4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/logout</value>
-      <webElementGuid>49c8c2c3-2bd9-4408-8f94-b65b74346576</webElementGuid>
+      <webElementGuid>7dafef65-4dd5-411d-a944-53ee1c587baf</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +38,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ico-logout</value>
-      <webElementGuid>bba164aa-e390-4ae7-b3d9-5c2a8deaf110</webElementGuid>
+      <webElementGuid>d1565ec7-4a76-446a-870d-46e713f9535b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Log out</value>
-      <webElementGuid>a8d0597d-5ee3-4e35-880e-b38b64d62bd0</webElementGuid>
+      <webElementGuid>8222c428-181e-417b-883b-0da0ba1f587c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;header&quot;]/div[@class=&quot;header-links-wrapper&quot;]/div[@class=&quot;header-links&quot;]/ul[1]/li[2]/a[@class=&quot;ico-logout&quot;]</value>
-      <webElementGuid>a745f7a7-828b-4600-b4bf-2526cee12d25</webElementGuid>
+      <webElementGuid>3b25ba00-ae39-405d-9c68-df21823a5121</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'Log out')]</value>
-      <webElementGuid>be7183a4-1b90-40c1-b810-cb1fa32e97c0</webElementGuid>
+      <webElementGuid>d343cd94-5798-4718-8093-034b656d8763</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,6 +70,6 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/logout')]</value>
-      <webElementGuid>9b6f3467-3fca-4064-beed-6cf32123ab8b</webElementGuid>
+      <webElementGuid>bba7d424-6227-4105-9700-74daed323d9e</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

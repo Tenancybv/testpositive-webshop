@@ -6,15 +6,19 @@
    <elementGuidId>c735bf6c-912b-4c3f-8bc5-3da991ce9952</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>(//a[contains(text(),'Smartphone')])[2]</value>
+         <key>BASIC</key>
+         <value>//*[@href = '/smartphone' and (text() = 'Smartphone' or . = 'Smartphone')]</value>
       </entry>
       <entry>
          <key>CSS</key>
          <value>h2.product-title > a</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(//a[contains(text(),'Smartphone')])[2]</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>true</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>

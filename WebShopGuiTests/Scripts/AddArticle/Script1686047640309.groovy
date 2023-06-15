@@ -28,6 +28,8 @@ String RN2 = number2.toString()
 
 int timeout = 90
 
+int timeout2 = 15
+
 int valueItem1 = 0
 
 int valueItem2 = 0
@@ -47,44 +49,38 @@ WebUI.setEncryptedText(findTestObject('Object Repository/Page_Demo Web Shop. Log
 
 WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Login/input_Forgot password_button-1 login-button'))
 
-
-/*
 //remove any existing items from cart
+WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop/span_Shopping cart'), timeout)
+
 WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop/span_Shopping cart'))
 
 if (WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), 
-    timeout, FailureHandling.OPTIONAL)) {
-    def checkboxes = WebUI.findWebElements(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), 
-        ByCssSelector('.cart'))
+    timeout2,  FailureHandling.OPTIONAL) == true) {
+    WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'))
 
-    for (def checkbox : checkboxes) {
-        WebUI.click(checkbox)
-
-        WebUI.verifyElementChecked(checkbox, 10)
-    }
-    
-     */
-     
-     /*
-        
-	TestObject testObj = findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart')
-	List<WebElement> elements = WebUI.findWebElements(testObj, 10)
-	for (int i = 0;  i < elements.size(); ++i) {
-		WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), FailureHandling.OPTIONAL)
-	}
-	*/
-		
-	 /*
-	WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), FailureHandling.OPTIONAL)
-	WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart_2'), FailureHandling.OPTIONAL)
-	WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart_3'), FailureHandling.OPTIONAL)
-	WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Total_updatecart'), FailureHandling.OPTIONAL)
-	*/
-	
-/*	
+    WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Total_updatecart'), FailureHandling.OPTIONAL)
 } else {
 }
-*/
+
+WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop/span_Shopping cart'), FailureHandling.OPTIONAL)
+
+if (WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), 
+    timeout2,  FailureHandling.OPTIONAL) == true) {
+    WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'))
+
+    WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Total_updatecart'), FailureHandling.OPTIONAL)
+} else {
+}
+
+WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop/span_Shopping cart'), FailureHandling.OPTIONAL)
+
+if (WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'), 
+    timeout2,  FailureHandling.OPTIONAL) == true) {
+    WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Remove_removefromcart'))
+
+    WebUI.click(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/input_Total_updatecart'), FailureHandling.OPTIONAL)
+} else {
+}
 
 //navigate to cell phones
 WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop/a_Electronics'), timeout)
@@ -112,8 +108,8 @@ switch (icnt) {
             RN1)
 
         WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Smartphone/input_Qty_add-to-cart-button-43'))
-		
-		valueItem1 = number1 * 100
+
+        valueItem1 = (number1 * 100)
 
         break
     case 1:
@@ -152,8 +148,8 @@ switch (icnt2) {
             RN2)
 
         WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Blue Jeans/input_Qty_add-to-cart-button-36'))
-		
-		valueItem2 = number2 * 1
+
+        valueItem2 = (number2 * 1)
 
         break
     case 1:
@@ -166,8 +162,8 @@ switch (icnt2) {
             RN2)
 
         WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Casual Golf Belt/input_Qty_add-to-cart-button-40'))
-		
-		valueItem2 = number2 * 1
+
+        valueItem2 = (number2 * 1)
 
         break
     default:
@@ -177,19 +173,17 @@ switch (icnt2) {
 }
 
 //check cart and log out'
-
 int totalprice = valueItem1 + valueItem2
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop. Blue Jeans/span_Shopping cart'), timeout)
 
 WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Blue Jeans/span_Shopping cart'))
 
-WebUI.verifyElementText((findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/Sub-total')), (totalprice.toString()+ '.00'))
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/Sub-total'), totalprice.toString() + 
+    '.00')
 
 WebUI.waitForElementClickable(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/a_Log out'), timeout)
 
 WebUI.enhancedClick(findTestObject('Object Repository/Page_Demo Web Shop. Shopping Cart/a_Log out'))
 
 WebUI.closeBrowser()
-
-

@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>span</value>
-      <webElementGuid>7db2e1c9-afea-410c-a503-1f1941713b5c</webElementGuid>
+      <webElementGuid>4b0a5fbb-0616-4535-bf2c-38f6839ae77c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>product-price</value>
-      <webElementGuid>3abbf547-5d20-435e-9300-dff527c0a847</webElementGuid>
+      <webElementGuid>db5d99a9-e01f-4bbd-90ff-4e093e14323d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>text</name>
       <type>Main</type>
       <value>12.00</value>
-      <webElementGuid>5a0c56d5-92f7-4259-a0a5-67b42dc6b9af</webElementGuid>
+      <webElementGuid>e4059328-d9e1-4af8-8863-f7bd1964ad9c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;master-wrapper-main&quot;]/div[@class=&quot;center-1&quot;]/div[@class=&quot;page shopping-cart-page&quot;]/div[@class=&quot;page-body&quot;]/div[@class=&quot;order-summary-content&quot;]/form[1]/div[@class=&quot;cart-footer&quot;]/div[@class=&quot;totals&quot;]/div[@class=&quot;total-info&quot;]/table[@class=&quot;cart-total&quot;]/tbody[1]/tr[1]/td[@class=&quot;cart-total-right&quot;]/span[@class=&quot;nobr&quot;]/span[@class=&quot;product-price&quot;]</value>
-      <webElementGuid>ae6091ce-a710-44f8-8b66-472b4c6b0d1d</webElementGuid>
+      <webElementGuid>f4123c79-5c3e-4e00-bf4b-a286d2559d2d</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Sub-Total:'])[1]/following::span[2]</value>
-      <webElementGuid>c548dd1b-d627-44cc-ac72-6e3c0e41408d</webElementGuid>
+      <webElementGuid>a549e6c7-b638-4301-9b1d-dda17dcd4ddf</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,6 +62,6 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//td[2]/span/span</value>
-      <webElementGuid>3cceb66f-75bb-43f4-b558-a40073711aff</webElementGuid>
+      <webElementGuid>6b3bb27a-51fe-4652-aae7-6c367d7e1be8</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

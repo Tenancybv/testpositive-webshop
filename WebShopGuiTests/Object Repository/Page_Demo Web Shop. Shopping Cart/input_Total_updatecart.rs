@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>e94b2746-8c96-4c2c-b787-4d23f4efbeba</webElementGuid>
+      <webElementGuid>2ea90dae-cb8f-4f5a-9517-0daa394d2e9e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>type</name>
       <type>Main</type>
       <value>submit</value>
-      <webElementGuid>6787e89d-607d-4d44-a44d-078c4075e3c5</webElementGuid>
+      <webElementGuid>61873e0e-71a3-487f-a85b-ff19a52a73fa</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>name</name>
       <type>Main</type>
       <value>updatecart</value>
-      <webElementGuid>4614a763-daee-4778-84fa-0cb6196e290d</webElementGuid>
+      <webElementGuid>51e03c2a-6937-49dd-bc18-3e8e786bad9e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>value</name>
       <type>Main</type>
       <value>Update shopping cart</value>
-      <webElementGuid>deb0733f-0959-4462-a094-372f836b851f</webElementGuid>
+      <webElementGuid>530aac02-ac99-459b-ac16-98ff3def2b88</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>class</name>
       <type>Main</type>
       <value>button-2 update-cart-button</value>
-      <webElementGuid>e5f6e0f7-515e-4bfb-a73a-799624785092</webElementGuid>
+      <webElementGuid>ec407d4f-59ee-4beb-aa88-5caa7d53b16c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;master-wrapper-main&quot;]/div[@class=&quot;center-1&quot;]/div[@class=&quot;page shopping-cart-page&quot;]/div[@class=&quot;page-body&quot;]/div[@class=&quot;order-summary-content&quot;]/form[1]/div[@class=&quot;buttons&quot;]/div[@class=&quot;common-buttons&quot;]/input[@class=&quot;button-2 update-cart-button&quot;]</value>
-      <webElementGuid>0199955b-801c-462f-9b38-f79e39689209</webElementGuid>
+      <webElementGuid>bcead015-c958-400a-85aa-392de44ac617</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//input[@name='updatecart']</value>
-      <webElementGuid>47e2e0c4-0d8c-4de3-a64b-9b52566af2b3</webElementGuid>
+      <webElementGuid>74585f21-3a22-499a-8a81-c8db65823f53</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//form/div/div/input</value>
-      <webElementGuid>49b060c7-517a-4352-b3de-fdfe1c382f2b</webElementGuid>
+      <webElementGuid>5c2976ef-46fb-45af-a262-726313ed51d7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,6 +86,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//input[@type = 'submit' and @name = 'updatecart']</value>
-      <webElementGuid>16709693-d598-4c88-8c3d-4d813fa1853b</webElementGuid>
+      <webElementGuid>1b271748-fc9a-44bc-ade8-49cd51b11ba8</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
