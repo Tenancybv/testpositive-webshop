@@ -79,13 +79,18 @@ jobs:
         run: dotnet test
 
   gui-tests:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Katalon Studio Github Action
-      uses: katalon-studio/katalon-studio-github-action@v2.1
-      with:
-          version: '7.5.5'
-          projectPath: '${{ github.workspace }}/WebShopGuiTests'
-          args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/Test Suite" -apiKey= ${{ secrets.KATALON_API_KEY }} --config -webui.autoUpdateDrivers=true'
+    - name: Run Katalon Studio on 
+      run: |
+        # Download and extract Katalon Studio Engine
+        curl -L "https://backend.katalon.com/download-lastest-version?platform=mac_64&type_download=re" -o engine.tar.gz
+        tar -xf engine.tar.gz
+        # Run Katalon Studio Engine
+        cd "Katalon_Studio_Engine*"
+        cd "Katalon Studio Engine.app/Contents/MacOS"
+        chmod +x katalonc
+        
+        ./katalonc -noSplash -runMode=console -projectPath="../../../../WebShopGuiTests" -retry=0 -testSuitePath="Test Suites/Test Suite" -browserType="saucelabs_second" -executionProfile="default" -apiKey="${{ secrets.KATALON_API_KEY }}" -testOpsProjectId=1151115 --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
