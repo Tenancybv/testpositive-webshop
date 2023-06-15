@@ -6,12 +6,12 @@
    <elementGuidId>da280bd8-3de3-4053-b7f6-ecb3a754cd6d</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'Electronics')]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>a.hover</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[contains(text(),'Electronics')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>27ad3cea-982f-4519-81c1-2b982a773ec8</webElementGuid>
+      <webElementGuid>47e98f26-a260-4382-bf41-0d3084a100ca</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/electronics</value>
-      <webElementGuid>ed25cc21-d5fb-4bf3-ac8f-0907f9f62b04</webElementGuid>
+      <webElementGuid>4afb51ef-de85-4b62-8edb-e3e082aa71f2</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +38,7 @@
       <name>class</name>
       <type>Main</type>
       <value>hover</value>
-      <webElementGuid>0fc01f0e-419f-4100-8d5c-5da112b28fed</webElementGuid>
+      <webElementGuid>cf6e9dc4-b10c-4a1f-8d14-88ad5d67a061</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -47,7 +47,7 @@
       <type>Main</type>
       <value>Electronics
         </value>
-      <webElementGuid>71aeaf15-dc1f-4f47-84e8-8478bbeb047d</webElementGuid>
+      <webElementGuid>2d2a2c82-8ebd-4310-a3a0-a3f05d175680</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -55,7 +55,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;header-menu&quot;]/ul[@class=&quot;top-menu&quot;]/li[3]/a[@class=&quot;hover&quot;]</value>
-      <webElementGuid>43dee638-2575-47b1-ae5b-0df9b909cbe4</webElementGuid>
+      <webElementGuid>77391cc0-f231-4293-bc13-4f8560a8c034</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -63,7 +63,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'Electronics')]</value>
-      <webElementGuid>4b2cefeb-a0a5-4777-8ecb-98db5ad4b2c6</webElementGuid>
+      <webElementGuid>f9f2c791-49c5-46e6-a10e-c4cbd3ad4f40</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -71,6 +71,6 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/electronics')]</value>
-      <webElementGuid>ecf29b36-5b62-4ad7-8827-470d07bdc6e9</webElementGuid>
+      <webElementGuid>13f03106-7954-40a3-b3ee-d0800b41e0b4</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

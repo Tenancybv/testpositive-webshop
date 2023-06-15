@@ -6,12 +6,12 @@
    <elementGuidId>97369caa-d955-4818-aa42-901b1913cc23</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'Log out')]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>a.ico-logout</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[contains(text(),'Log out')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>c87f3721-227d-493a-b5c9-d8a73833673b</webElementGuid>
+      <webElementGuid>5728084f-4d65-483e-a906-906987a67e63</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/logout</value>
-      <webElementGuid>d7c0a78e-6ca2-48ae-88bc-21e6ef732fd7</webElementGuid>
+      <webElementGuid>49c8c2c3-2bd9-4408-8f94-b65b74346576</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +38,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ico-logout</value>
-      <webElementGuid>ad1b1824-537d-4dfb-8ca2-e029f387f126</webElementGuid>
+      <webElementGuid>bba164aa-e390-4ae7-b3d9-5c2a8deaf110</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Log out</value>
-      <webElementGuid>54c46010-2f0a-44a8-a8d0-67cb7a7bb6e6</webElementGuid>
+      <webElementGuid>a8d0597d-5ee3-4e35-880e-b38b64d62bd0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[@class=&quot;master-wrapper-page&quot;]/div[@class=&quot;master-wrapper-content&quot;]/div[@class=&quot;header&quot;]/div[@class=&quot;header-links-wrapper&quot;]/div[@class=&quot;header-links&quot;]/ul[1]/li[2]/a[@class=&quot;ico-logout&quot;]</value>
-      <webElementGuid>60a2f4b2-8f28-4847-bc97-3d60f2b7a889</webElementGuid>
+      <webElementGuid>a745f7a7-828b-4600-b4bf-2526cee12d25</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'Log out')]</value>
-      <webElementGuid>48b8a71e-bb16-4633-953e-9cd2b8992cbd</webElementGuid>
+      <webElementGuid>be7183a4-1b90-40c1-b810-cb1fa32e97c0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,6 +70,6 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/logout')]</value>
-      <webElementGuid>50dfb28e-3040-4a01-adcb-06cbaf9cbf57</webElementGuid>
+      <webElementGuid>9b6f3467-3fca-4064-beed-6cf32123ab8b</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
