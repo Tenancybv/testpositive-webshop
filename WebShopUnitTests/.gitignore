@@ -146,7 +146,6 @@ _TeamCity*
 
 # Coverlet is a free, cross platform Code Coverage Tool
 coverage*.json
-coverage*.xml
 coverage*.info
 
 # Visual Studio code coverage results
@@ -333,9 +332,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-
-# OpenCover UI analysis results
-OpenCover/
 
 # Azure Stream Analytics local run output
 ASALocalRun/
