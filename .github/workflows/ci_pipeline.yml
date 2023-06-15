@@ -89,6 +89,7 @@ jobs:
         curl -L "https://backend.katalon.com/download-lastest-version?platform=mac_64&type_download=re" -o engine.tar.gz
         tar -xf engine.tar.gz
         # Run Katalon Studio Engine
+        ls -lah
         cd "Katalon_Studio_Engine*"
         cd "Katalon Studio Engine.app/Contents/MacOS"
         chmod +x katalonc
