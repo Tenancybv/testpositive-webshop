@@ -30,12 +30,12 @@ jobs:
           dotnet-version: "6.0.x"
       
       - name: Run tests
-        run: dotnet test
+        run: dotnet test /p:Include=[*]CostsCalculator /p:CollectCoverage=true /p:Threshold=90 /p:ThresholdType=branch /p:ThresholdStat=minimum /p:CoverletOutputFormat="opencover"
 
       - name: Generate OpenCover badge
         uses: danpetitt/open-cover-badge-generator-action@v1.0.9
         with:
-          path-to-opencover-xml: WebShopUnitTests/OpenCover/coverage.opencover.xml
+          path-to-opencover-xml: WebShopUnitTests/coverage.opencover.xml
           path-to-badges: ./
           minimum-coverage: 90
           repo-token: ${{ secrets.GITHUB_TOKEN }}
